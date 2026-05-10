@@ -1,6 +1,6 @@
 // ===== Webcore — site interactions =====
 const WHATSAPP_NUMBER = "918608865811";
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/myzraeew"; // <- replace with your Formspree ID
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkoypqdz"; // <- replace with your Formspree ID
 
 // ---------- Data ----------
 const landingPackages = [
