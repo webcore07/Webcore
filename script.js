@@ -298,7 +298,7 @@ function init() {
   var slide = new Slide(width, height, 'out');
 	var l1 = new THREE.ImageLoader();
 	l1.setCrossOrigin('Anonymous');
-  slide.setImage(l1.load('Webcore.png'));
+  slide.setImage(l1.load('WebCore.png'));
   root.scene.add(slide);
 
   var slide2 = new Slide(width, height, 'in');
