@@ -8,14 +8,14 @@ const landingPackages = [
     features: ["1 Page Landing Site", "Mobile Responsive Design", "Contact Form Integration", "Basic SEO Setup", "1 Round of Revisions", "5 Day Delivery"], highlight: false },
   { name: "Gold", price: "₹9,999", tagline: "Most popular for growing brands",
     features: ["Up to 5 Pages", "Premium Animated Design", "WhatsApp & Form Integration", "Advanced SEO + Analytics", "3 Rounds of Revisions", "Speed Optimized", "7 Day Delivery"], highlight: true },
-  { name: "Platinum", price: "₹19,999", tagline: "Premium solution, end-to-end",
+  { name: "Platinum", price: "₹14,999", tagline: "Premium solution, end-to-end",
     features: ["Up to 10 Custom Pages", "Bespoke UI/UX Design", "CMS / Blog Integration", "Premium SEO + Schema", "Unlimited Revisions", "Priority Support", "10 Day Delivery"], highlight: false },
 ];
 
 const ecomPackages = [
   { name: "Gold", price: "₹14,999", tagline: "WhatsApp Integrated Store",
     features: ["Up to 50 Products", "WhatsApp Order Integration", "Mobile-First Storefront", "Product Catalog & Cart", "Basic SEO Setup", "Admin Dashboard", "10 Day Delivery"], highlight: false },
-  { name: "Platinum", price: "₹29,999", tagline: "Payment Gateway + WhatsApp",
+  { name: "Platinum", price: "₹24,999", tagline: "Payment Gateway + WhatsApp",
     features: ["Unlimited Products", "Razorpay/Stripe Integration", "WhatsApp Order Notifications", "Customer Accounts & Wishlist", "Coupons & Discounts", "Advanced SEO + Analytics", "Priority Support", "15 Day Delivery"], highlight: true },
 ];
 
