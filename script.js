@@ -120,19 +120,6 @@ $$(".type-btn").forEach(btn => btn.addEventListener("click", () => {
 // ---------- Render works ----------
 function renderWorks() {
   if (!$("#worksGrid")) return;
-  $("#worksGrid").innerHTML = projects.map((p, i) => `
-    <div class="work reveal" style="--d:${i * 0.08}s">
-      <div class="work-img"><img src="${p.img}" alt="${p.title}" loading="lazy" /></div>
-      <div class="work-body">
-        <div>
-          <div class="work-cat grad-text">${p.category}</div>
-          <div class="work-title">${p.title}</div>
-        </div>
-        <a href="#" class="work-link" aria-label="View ${p.title}"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-      </div>
-    </div>
-  `).join("");
-  observeReveal();
 }
 
 // ---------- Modals ----------
@@ -279,7 +266,7 @@ observeReveal();
 // Logo aniamtion js file
 
 window.onload = init;
-console.ward = function() {}; // what warnings?
+console.warn = function() {}; // what warnings?
 
 function init() {
   var root = new THREERoot({
@@ -699,6 +686,3 @@ function createTweenScrubber(tween, seekSpeed) {
     seek(dx);
   }, { passive: true });
 }
-
-
-   
