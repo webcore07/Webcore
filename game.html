@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stick Hero — Webcore</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { overflow: hidden; background: #BBD691; font-family: 'Poppins', system-ui, sans-serif; }
+
+    #game { display: block; }
+
+    #score {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    #introduction {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+      background: rgba(255,255,255,0.85);
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      text-align: center;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+
+    #perfect {
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #e74c3c;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    #restart {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+      padding: 0.75rem 2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: 0 4px 20px rgba(102,126,234,0.5);
+    }
+    #restart:hover { opacity: 0.9; transform: translateX(-50%) scale(1.04); }
+
+    #back {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #333;
+      background: rgba(255,255,255,0.85);
+      border: none;
+      border-radius: 2rem;
+      cursor: pointer;
+      z-index: 10;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" id="back">← Back</a>
+  <div id="score"></div>
+  <canvas id="game"></canvas>
+  <div id="introduction">Hold down the mouse to stretch out a stick</div>
+  <div id="perfect">DOUBLE SCORE</div>
+  <button id="restart">RESTART</button>
+  <script src="game.js"></script>
+</body>
+</html>
