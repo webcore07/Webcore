@@ -1,4 +1,4 @@
-﻿/* Webcore — Futuristic Neon Design System */
+/* Webcore — Futuristic Neon Design System */
 /* ─── PAGE RESET (demo background only) ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     .demo-label {
@@ -8,6 +8,7 @@
       letter-spacing: .06em;
       pointer-events: none;
     }
+
 
     /* ════════════════════════════════════════
        CHATBOT WIDGET
