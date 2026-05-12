@@ -26,7 +26,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkoypqdz"; // <- replace with
   const KB = [
     {
       keys: ['service','offer','provide','what do you do','help with','work'],
-      reply: '🚀 We provide modern website development, responsive UI/UX design, portfolio websites, business websites, e-commerce stores, branding, and digital solutions tailored for growth.'
+      reply: '🚀 We provide modern website development, responsive UI/UX design, portfolio websites, business websites and e-commerce stores for your business growth.'
     },
     {
       keys: ['Demo Website','sample','idea','show me','example','portfolio','previous work'],
@@ -213,6 +213,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkoypqdz"; // <- replace with
   function openChat() {
     opened = true;
     box.classList.add('wc-open');
+    trigger.style.display = 'none';
     badge.style.display = 'none';
     showWelcome();
     setTimeout(() => input.focus(), 350);
@@ -221,10 +222,11 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/mkoypqdz"; // <- replace with
   function closeChat() {
     opened = false;
     box.classList.remove('wc-open');
+    trigger.style.display = '';
   }
 
   /* ── Event Listeners ── */
-  trigger.addEventListener('click', () => opened ? closeChat() : openChat());
+  trigger.addEventListener('click', openChat);
   closeBtn.addEventListener('click', closeChat);
 
   sendBtn.addEventListener('click', () => sendMessage(input.value));
@@ -430,16 +432,19 @@ $("#packageForm").addEventListener("submit", e => {
   if (business.length < 2) return showToast("Please enter your business type", "error");
 
   const message =
-`Client Details, New Request Web Core
+`WEB CORE, New Request for ${currentType} - ${chosenPackage}
+CLIENT DETAILS
 
-Name: ${name}
-Mobile number: ${phone}
-Email ID: ${email}
-Business type: ${business}
+👤 Name: ${name}
+📞 Mobile number: ${phone}
+✉️ Email ID: ${email}
+💼 Business type: ${business}
+_______________________________________
 
-Package Details:
-Website type: ${currentType}
-Chosen Package: ${chosenPackage}`;
+PACKAGE DETAILS
+
+🌐 Website type: ${currentType}
+🚀 Chosen Package: ${chosenPackage}`;
 
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
   window.open(url, "_blank");
