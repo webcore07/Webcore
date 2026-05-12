@@ -433,23 +433,29 @@ $("#packageForm").addEventListener("submit", e => {
 
   const message =
 `WEB CORE, New Request for ${currentType} - ${chosenPackage}
+
 CLIENT DETAILS
 
 👤 Name: ${name}
 📞 Mobile number: ${phone}
 ✉️ Email ID: ${email}
 💼 Business type: ${business}
-_______________________________________
+
+_____________________________________________
 
 PACKAGE DETAILS
 
 🌐 Website type: ${currentType}
 🚀 Chosen Package: ${chosenPackage}`;
 
-  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
-  showToast("Redirecting to WhatsApp...", "success");
-  closeModal($("#packageModal"));
+// Direct WhatsApp App Open
+const url = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(message)}`;
+
+// Replace window.open
+window.location.href = url;
+
+showToast("Opening WhatsApp...", "success");
+closeModal($("#packageModal"));
 });
 
 // ---------- Contact form -> Formspree ----------
