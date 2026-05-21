@@ -133,6 +133,100 @@
         pointer-events: none;
     }
     
+    /* Clients section */
+    .clients-section {
+      padding: 5rem 0 3rem;
+    }
+    .clients-section .section-head {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+    }
+    .client-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .client-card {
+      flex: 1 1 calc((100% - 7.5rem) / 6);
+      max-width: 160px;
+      min-width: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .client-link {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      padding: 0.8rem;
+      border-radius: 50%;
+      transition: transform 0.35s ease;
+    }
+    .client-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: transparent;
+      opacity: 0;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform: scale(0.8);
+      z-index: 0;
+    }
+    .client-logo {
+      width: 100%;
+      max-width: 130px;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      z-index: 1;
+    }
+    .client-link:hover {
+      transform: translateY(-6px);
+    }
+    .client-link:hover::before {
+      opacity: 1;
+      transform: scale(1);
+      background: radial-gradient(circle at top left, rgba(0,245,255,0.44), transparent 30%), radial-gradient(circle at bottom right, rgba(255,79,216,0.28), transparent 25%), linear-gradient(135deg, rgba(0,245,255,0.22), rgba(123,97,255,0.22), rgba(255,79,216,0.22));
+    }
+    .client-logo img {
+      width: 55%;
+      height: 55%;
+      object-fit: contain;
+      z-index: 2;
+    }
+    @media (max-width: 1024px) {
+      .client-card {
+        flex: 1 1 calc((100% - 4.8rem) / 4);
+        max-width: 140px;
+      }
+    }
+    @media (max-width: 768px) {
+      .client-card {
+        flex: 1 1 calc((100% - 3rem) / 3);
+        max-width: 120px;
+      }
+    }
+    @media (max-width: 520px) {
+      .client-card {
+        flex: 1 1 calc((100% - 3rem) / 3);
+        max-width: 100px;
+        min-width: 90px;
+      }
+    }
+    
     /* 🔒 Optional: blur screen when trying to inspect */
     body.inspect-block {
         filter: blur(10px);
@@ -211,6 +305,7 @@
           <a href="#about">About Us</a>
           <a href="webdevelop.html">Web Development</a>
           <a href="#process">Our Works</a>
+          <a href="#clients">Clients</a>
           <button class="btn btn-neon btn-sm" data-open="contact">Contact Us</button>
         </div>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
@@ -222,6 +317,7 @@
         <a href="#about">About Us</a>
         <a href="webdevelop.html">Web Development</a>
         <a href="#process">Our Works</a>
+        <a href="#clients">Clients</a>
         <button class="btn btn-neon" data-open="contact">Contact Us</button>
       </div>
     </div>
@@ -437,6 +533,27 @@
   </div>
 </section>
 
+    <!-- CLIENTS -->
+    <section id="clients" class="section clients-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow grad-text">Trusted By</span>
+          <h2>Clients Who Choose <span class="grad-text">Webcore</span></h2>
+          <p>Professional brands partner with us for modern, high-performance web experiences.</p>
+        </div>
+        <div class="client-grid">
+          <h1 class="client-placeholder reveal" style="font-size: 22px;">Comming soon..</h1>
+          <!-- <div class="client-card reveal">
+            <a class="client-link" href="Webcore.png" target="_blank" rel="noopener noreferrer" aria-label="Apple">
+              <div class="client-logo">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo" />
+              </div>
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
     <!-- CONTACT -->
     <section id="contact" class="section">
       <div class="container narrow">
@@ -493,6 +610,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="webdevelop.html">Web Development</a></li>
           <li><a href="#process">Our Works</a></li>
+          <li><a href="#clients">Clients</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
       </div>
