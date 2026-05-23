@@ -63,7 +63,7 @@
     }
   }
   </style>
-  <script>
+  <!-- <script>
     // 🔒 Disable Right Click
     document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
@@ -120,7 +120,7 @@
         debugger;
     }, 2000);
     
-    </script>
+    </script> -->
     
     <style>
     /* 🔒 Disable text selection */
@@ -153,25 +153,26 @@
       max-width: 160px;
       min-width: 120px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      gap: 1rem;
+      text-align: center;
     }
     .client-link {
-      width: 100%;
-      display: flex;
+      display: inline-flex;
       justify-content: center;
       align-items: center;
       text-decoration: none;
       position: relative;
-      padding: 0.8rem;
-      border-radius: 50%;
+      padding: 0;
+      border-radius: 0;
       transition: transform 0.35s ease;
     }
     .client-link::before {
       content: '';
       position: absolute;
       inset: 0;
-      border-radius: 50%;
       background: transparent;
       opacity: 0;
       transition: opacity 0.35s ease, transform 0.35s ease;
@@ -183,29 +184,37 @@
       max-width: 130px;
       aspect-ratio: 1 / 1;
       border-radius: 50%;
-      background: rgba(255,255,255,0.08);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      background: transparent;
+      box-shadow: none;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       overflow: hidden;
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      transition: transform 0.35s ease;
       z-index: 1;
+      padding: 0;
+    }
+    .client-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 2;
+      display: block;
     }
     .client-link:hover {
       transform: translateY(-6px);
     }
     .client-link:hover::before {
-      opacity: 1;
+      opacity: 0;
       transform: scale(1);
-      background: radial-gradient(circle at top left, rgba(0,245,255,0.44), transparent 30%), radial-gradient(circle at bottom right, rgba(255,79,216,0.28), transparent 25%), linear-gradient(135deg, rgba(0,245,255,0.22), rgba(123,97,255,0.22), rgba(255,79,216,0.22));
     }
-    .client-logo img {
-      width: 55%;
-      height: 55%;
-      object-fit: contain;
-      z-index: 2;
+    .client-name {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #edf0ff;
     }
     @media (max-width: 1024px) {
       .client-card {
@@ -542,14 +551,14 @@
           <p>Professional brands partner with us for modern, high-performance web experiences.</p>
         </div>
         <div class="client-grid">
-          <h1 class="client-placeholder reveal" style="font-size: 22px;">Comming soon..</h1>
-          <!-- <div class="client-card reveal">
-            <a class="client-link" href="Webcore.png" target="_blank" rel="noopener noreferrer" aria-label="Apple">
+          <div class="client-card reveal">
+            <a class="client-link" href="webdevelop.html" target="_blank" rel="noopener noreferrer" aria-label="Apple">
               <div class="client-logo">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple logo" />
+                <img src="Fruithouse.jpeg" alt="Fruit House logo" />
               </div>
             </a>
-          </div> -->
+            <h2 class="client-name">Fruit House</h2>
+          </div>
         </div>
       </div>
     </section>
