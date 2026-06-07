@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Current Offers — Webcore</title>
+  <meta name="description" content="Exclusive website offers by Webcore. Get a professional website at special limited-time prices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="Webcore.png">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── OFFERS PAGE SPECIFIC ── */
+
+    .btn-neon :hover { background: linear-gradient(to left, orange,red); color: #fff; }
+    .offers-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 5rem;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .offers-hero .hero-content {
+      order: unset;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .offers-hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    .offers-hero .lead {
+      max-width: 680px;
+      margin: 1.5rem auto 0;
+    }
+
+    .promo-box {
+      margin: 2.5rem auto 0;
+      max-width: 680px;
+      padding: 1.75rem 2rem;
+      border-radius: 1.25rem;
+      text-align: left;
+      line-height: 1.85;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+
+    .promo-box p { margin-bottom: .75rem; }
+    .promo-box p:last-child { margin-bottom: 0; }
+
+    .promo-highlight {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .limited-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .45rem 1.1rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, darkred, red);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      box-shadow: var(--glow-pink);
+    }
+
+    /* ── FORM SECTION ── */
+    .offers-form-section {
+      padding: 5rem 0;
+    }
+
+    .form-card {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .form-card { padding: 3rem; }
+    }
+
+    .form-card-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+    }
+
+    .form-card-desc {
+      color: var(--muted);
+      font-size: .92rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 600px) {
+      .form-row.cols-2 { grid-template-columns: 1fr 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .form-label {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: .03em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .75rem 1rem;
+      border-radius: .75rem;
+      background: hsl(240 20% 14%);
+      border: 1px solid var(--border);
+      color: var(--fg);
+      font-family: 'Poppins', inherit;
+      font-size: .9rem;
+      transition: border-color .2s, box-shadow .2s;
+      resize: vertical;
+      outline: none;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .form-group select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--neon-purple);
+      box-shadow: 0 0 0 3px hsl(270 90% 65% / .15);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: var(--muted); }
+
+    /* Radio packages */
+    .pkg-radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-top: .25rem;
+    }
+
+    .pkg-radio-label {
+      display: flex;
+      align-items: flex-start;
+      gap: .9rem;
+      padding: 1rem 1.25rem;
+      border-radius: .9rem;
+      background: hsl(240 20% 10%);
+      border: 1.5px solid var(--border);
+      cursor: pointer;
+      transition: border-color .2s, background .2s;
+    }
+
+    .pkg-radio-label:has(input:checked) {
+      border-color: var(--neon-purple);
+      background: hsl(270 90% 65% / .08);
+    }
+
+    /* Hide the native radio, show a custom checkmark circle */
+    .pkg-radio-label input[type="radio"] {
+      display: none;
+    }
+
+    .pkg-radio-indicator {
+      flex-shrink: 0;
+      margin-top: 2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s, background .2s;
+      background: transparent;
+    }
+
+    .pkg-radio-indicator::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: transparent;
+      transition: background .2s;
+    }
+
+    .pkg-radio-label:has(input:checked) .pkg-radio-indicator {
+      border-color: var(--neon-purple);
+      background: hsl(270 90% 65% / .15);
+    }
+
+    .pkg-radio-label:has(input:checked) .pkg-radio-indicator::after {
+      background: var(--neon-purple);
+    }
+
+    /* Checkmark tick overlay on selected card */
+    .pkg-radio-label {
+      position: relative;
+    }
+
+    .pkg-check-tick {
+      position: absolute;
+      top: .75rem;
+      right: .9rem;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--gradient-neon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .7rem;
+      opacity: 0;
+      transform: scale(.6);
+      transition: opacity .2s, transform .25s cubic-bezier(.34,1.56,.64,1);
+      pointer-events: none;
+    }
+
+    .pkg-radio-label:has(input:checked) .pkg-check-tick {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .pkg-radio-info { display: flex; flex-direction: column; gap: .25rem; }
+    .pkg-radio-price { font-size: 1.1rem; font-weight: 700; color: var(--fg); }
+    .pkg-radio-extras { font-size: .78rem; color: var(--muted); line-height: 1.6; }
+    .pkg-radio-extras span { color: var(--neon-cyan); }
+
+    .pkg-hint {
+      font-size: .8rem;
+      color: var(--muted);
+      margin-top: .5rem;
+      font-style: italic;
+    }
+
+    /* ── FEATURE INFO CARDS ── */
+    .features-section {
+      padding: 0 0 4rem;
+    }
+
+    .features-grid {
+      display: grid;
+      gap: 2rem;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 860px) {
+      .features-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .feature-info-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .feature-info-header {
+      display: flex;
+      align-items: center;
+      gap: .85rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid hsl(0 0% 100% / .07);
+    }
+
+    .feature-info-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: .9rem;
+      background: var(--gradient-neon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      box-shadow: var(--glow-neon);
+    }
+
+    .feature-info-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .feature-info-subtitle {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: .15rem;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .85rem;
+      padding: .7rem .9rem;
+      border-radius: .75rem;
+      background: hsl(240 20% 8% / .6);
+      border: 1px solid hsl(0 0% 100% / .05);
+      transition: border-color .2s, background .2s;
+    }
+
+    .feature-item:hover {
+      border-color: hsl(270 90% 65% / .3);
+      background: hsl(270 90% 65% / .05);
+    }
+
+    .feature-item-icon {
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      border-radius: .5rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .85rem;
+      margin-top: 1px;
+    }
+
+    .feature-item-body { flex: 1; }
+
+    .feature-item-name {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--fg);
+      margin-bottom: .15rem;
+    }
+
+    .feature-item-desc {
+      font-size: .78rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* Submit btn */
+    .submit-btn {
+      margin-top: 1.5rem;
+      width: 100%;
+    }
+
+    /* Success message */
+    .success-banner {
+      display: none;
+      padding: 2rem;
+      border-radius: 1.25rem;
+      text-align: center;
+      background: hsl(270 90% 65% / .08);
+      border: 1px solid hsl(270 90% 65% / .3);
+      margin-top: 1.5rem;
+    }
+
+    .success-banner.show { display: block; }
+
+    .success-banner .success-icon {
+      width: 4rem; height: 4rem;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: var(--gradient-neon);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .success-banner h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: .5rem; }
+    .success-banner p { color: var(--muted); font-size: .92rem; line-height: 1.7; }
+
+    /* ── OFFER CARDS ── */
+    .offers-grid-section { padding: 5rem 0; }
+
+    .offers-grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .offers-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    }
+
+    .offer-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      border-radius: 1.25rem;
+      background: hsl(240 18% 9% / 0.92);
+      border: 1px solid var(--glass-border);
+      transition: border-color .3s, box-shadow .3s, transform .3s;
+    }
+
+    .offer-card:hover {
+      border-color: hsl(270 90% 65% / .5);
+      box-shadow: var(--glow-neon);
+      transform: translateY(-5px);
+    }
+
+    .offer-card.featured {
+      border-color: transparent;
+      box-shadow: var(--glow-neon);
+    }
+
+    .offer-card.featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: var(--gradient-neon);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    @media (min-width: 768px) {
+      .offer-card.featured { transform: scale(1.03); }
+      .offer-card.featured:hover { transform: scale(1.03) translateY(-5px); }
+    }
+
+    .offer-popular-badge {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gradient-neon);
+      color: #fff;
+      font-size: .7rem;
+      font-weight: 700;
+      padding: .3rem 1.1rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      box-shadow: var(--glow-neon);
+      letter-spacing: .04em;
+    }
+
+    .offer-card-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: .25rem;
+    }
+
+    .offer-card-price {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin: .5rem 0 .25rem;
+    }
+
+    .offer-best-for {
+      font-size: .82rem;
+      color: var(--neon-cyan);
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
+    }
+
+    .offer-divider {
+      height: 1px;
+      background: hsl(0 0% 100% / .08);
+      margin: 1rem 0 1.25rem;
+    }
+
+    .offer-advantages {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+      flex: 1;
+    }
+
+    .offer-advantages li {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .offer-card .btn {
+      margin-top: 2rem;
+    }
+
+    /* ── IMPORTANT INFO ── */
+    .info-section { padding: 5rem 0; }
+
+    .info-card {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem;
+      border-radius: 1.5rem;
+    }
+
+    .info-card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.75rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .info-list li {
+      display: flex;
+      gap: .75rem;
+      font-size: .92rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .info-check {
+      flex-shrink: 0;
+      margin-top: 3px;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 999px;
+      background: var(--gradient-neon);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: .65rem;
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      padding: 6rem 0;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(1.75rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .final-cta p {
+      color: var(--muted);
+      max-width: 34rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* ── OFFERS FOOTER ── */
+    .offers-footer {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      border-top: 1px solid hsl(0 0% 100% / .06);
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .offers-footer span { color: var(--neon-cyan); font-weight: 600; }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header id="navbar">
+    <div class="nav-wrap">
+      <nav class="nav">
+        <a href="index.html" class="logo-link" aria-label="Webcore home">
+          <div class="logo">
+            <img src="Webcore.png" alt="Webcore Logo" class="logo-mark logo-md" />
+            <span class="logo-text">WEB<span class="grad-text"> CORE</span></span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#about">About Us</a>
+          <a href="webdevelop.html">Web Development</a>
+          <a href="offers.html" style="color:var(--fg);">Current Offers</a>
+          <a href="index.html#process">Our Works</a>
+          <a href="index.html#clients">Clients</a>
+          <a href="#offer-form" class="btn btn-neon btn-sm" style="color: white;">Claim Offer</a>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Us</a>
+        <a href="webdevelop.html">Web Development</a>
+        <a href="offers.html">Current Offers</a>
+        <a href="index.html#process">Our Works</a>
+        <a href="index.html#clients">Clients</a>
+        <a href="#offer-form" class="btn btn-neon" style="color: white;">Claim Offer</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ════════════════════════════════
+         SECTION 1 — HERO
+    ════════════════════════════════ -->
+    <section class="offers-hero">
+      <div class="glow-orbs">
+        <div class="orb orb-blue"></div>
+        <div class="orb orb-purple"></div>
+        <div class="orb orb-pink"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="badge glass">
+            <span>🔥 Limited-Time Exclusive Offer</span>
+          </div>
+          <h1>🎉 Exclusive Website Offers<br><span class="grad-text grad-anim">by Webcore</span></h1>
+          <p class="lead">Transform your business with a professional website at special limited-time prices.</p>
+
+          <div class="promo-box glass reveal" style="--d:.1s">
+            <p><span class="promo-highlight">🚀 Ready to take your business online?</span></p>
+            <p>Whether you're a small shop, startup, service provider, or growing brand, Webcore helps you establish a strong online presence with modern, mobile-friendly, and professional websites.</p>
+            <p><span class="promo-highlight">🔥 Special offers are currently available for a limited period.</span> Don't miss this opportunity to get your business website at an affordable price with premium support and modern design.</p>
+            <span class="limited-badge">⚡ Limited Slots Available — Book Today</span>
+          </div>
+
+          <div class="cta-row" style="justify-content:center; margin-top:2rem;">
+            <a href="#offer-form" class="btn btn-neon btn-lg">Claim Your Offer Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         SECTION 2 — OFFER FORM
+    ════════════════════════════════ -->
+    <section id="offer-form" class="offers-form-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow grad-text">Get Started</span>
+          <h2>Claim Your <span class="grad-text">Exclusive Offer</span></h2>
+        </div>
+
+        <div class="form-card glass-card reveal">
+          <p class="form-card-title">📋 Claim Your Offer</p>
+          <p class="form-card-desc">Fill out the form below and our team will contact you within 24 hours.</p>
+
+          <form id="offerForm" action="https://formspree.io/f/mkoypqdz" method="POST" novalidate>
+
+            <div class="form-row cols-2" style="margin-bottom:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Your full name" maxlength="80" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" maxlength="20" required />
+              </div>
+            </div>
+
+            <div class="form-row cols-2" style="margin-bottom:1rem;">
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" maxlength="150" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="business">Business Name *</label>
+                <input type="text" id="business" name="business" placeholder="Your business name" maxlength="80" required />
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label class="form-label" for="websiteType">Website Type *</label>
+              <select id="websiteType" name="websiteType" required>
+                <option value="" disabled selected>Select website type</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="E-Commerce Website">E-Commerce Website</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label class="form-label">Choose Your Package *</label>
+              <div class="pkg-radio-group" id="pkgRadioGroup">
+                <!-- Populated dynamically by JS -->
+              </div>
+              <p class="pkg-hint" id="pkgHint">👆 Please select a Website Type above to see available packages.</p>
+            </div>
+
+            <div class="form-group" style="margin-bottom:1rem;">
+              <label class="form-label" for="message">Message (Optional)</label>
+              <textarea id="message" name="message" placeholder="Tell us about your requirements…" rows="4" maxlength="600"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-neon btn-lg submit-btn">Submit Request</button>
+          </form>
+
+          <!-- SUCCESS MESSAGE -->
+          <div class="success-banner" id="offerSuccess">
+            <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+            <h3 class="grad-text">✅ Request Submitted Successfully</h3>
+            <p>
+              Thank you for choosing Webcore.<br>
+              Our team will review your requirements and contact you within 24 hours.<br>
+              We look forward to helping your business grow online.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         FEATURE INFO CARDS
+    ════════════════════════════════ -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-head reveal" style="margin-bottom:2.5rem;">
+          <span class="eyebrow grad-text">What's Included</span>
+          <h2>Features &amp; <span class="grad-text">Benefits</span></h2>
+          <p>Everything you get with each package, explained clearly.</p>
+        </div>
+
+        <div class="features-grid">
+
+          <!-- Landing Page Card -->
+          <div class="feature-info-card glass-card reveal">
+            <div class="feature-info-header">
+              <div class="feature-info-icon"><i class="fa-solid fa-file-code"></i></div>
+              <div>
+                <p class="feature-info-title">Landing Page<br><span class="grad-text">Features &amp; Benefits</span></p>
+                <p class="feature-info-subtitle">Packages: ₹1,999 &amp; ₹2,499</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-item-icon">📱</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Responsive Design</p>
+                  <p class="feature-item-desc">Looks perfect on mobile, tablet, and desktop devices.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">💬</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">WhatsApp &amp; Contact Form</p>
+                  <p class="feature-item-desc">Allows customers to reach your business instantly via WhatsApp or form.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">⚡</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Fast Loading Speed</p>
+                  <p class="feature-item-desc">Improves user experience, reduces bounce rate, and boosts engagement.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">🎨</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Modern UI Design</p>
+                  <p class="feature-item-desc">Clean, professional layout that builds trust with your visitors.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">📣</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Services Showcase</p>
+                  <p class="feature-item-desc">Highlight what your business offers clearly to attract the right customers.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">🛡️</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Secure &amp; Reliable</p>
+                  <p class="feature-item-desc">Built with clean code standards to ensure stability and security.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- E-Commerce Card -->
+          <div class="feature-info-card glass-card reveal" style="--d:.1s">
+            <div class="feature-info-header">
+              <div class="feature-info-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div>
+                <p class="feature-info-title">E-Commerce Website<br><span class="grad-text">Features &amp; Benefits</span></p>
+                <p class="feature-info-subtitle">Packages: ₹5,999 &middot; ₹7,999 &middot; ₹9,999</p>
+              </div>
+            </div>
+            <ul class="feature-list">
+              <li class="feature-item">
+                <span class="feature-item-icon">📞</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">WhatsApp Order Integration</p>
+                  <p class="feature-item-desc">Customers can place orders directly via WhatsApp for quick communication.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">📊</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Inventory Management</p>
+                  <p class="feature-item-desc">Keeps product stock levels updated so you never oversell.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">📱</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Fully Mobile Responsive</p>
+                  <p class="feature-item-desc">Shoppers get a seamless experience on any device, anywhere.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">⚡</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Fast Loading</p>
+                  <p class="feature-item-desc">Ensures a quick and smooth browsing experience for your customers.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">🌐</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">Domain Included</p>
+                  <p class="feature-item-desc">.in domain with ₹5,999 &amp; ₹7,999 plans; premium .com domain with ₹9,999 plan.</p>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-item-icon">🛠️</span>
+                <div class="feature-item-body">
+                  <p class="feature-item-name">1 Year Free Support</p>
+                  <p class="feature-item-desc">Dedicated after-launch support and maintenance for 12 months.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         SECTION 3 — AVAILABLE OFFERS
+    ════════════════════════════════ -->
+    <!-- <section class="offers-grid-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow grad-text">Available Offers</span>
+          <h2>Choose the <span class="grad-text">Right Package</span> for You</h2>
+          <p>All packages are designed to give your business a powerful online presence.</p>
+        </div>
+
+        <div class="offers-grid">
+
+          Card 1
+          <div class="offer-card reveal">
+            <p class="offer-card-name">Landing Page Website</p>
+            <p class="offer-card-price grad-text">₹1,999</p>
+            <p class="offer-best-for">✅ Best For: Small businesses, startups, and local shops looking for a professional online presence.</p>
+            <div class="offer-divider"></div>
+            <ul class="offer-advantages">
+              <li>🚀 Get your business online quickly with a modern and professional website.</li>
+              <li>📱 Fully mobile-friendly design for all devices.</li>
+              <li>💬 Direct WhatsApp integration to receive customer enquiries instantly.</li>
+              <li>⚡ Fast-loading pages for a better user experience.</li>
+              <li>🔍 Basic SEO setup to improve online visibility.</li>
+            </ul>
+            <a href="#offer-form" class="btn btn-neon-outline">Claim This Offer</a>
+          </div>
+
+          Card 2
+          <div class="offer-card reveal" style="--d:.1s">
+            <p class="offer-card-name">Business Website</p>
+            <p class="offer-card-price grad-text">₹2,499</p>
+            <p class="offer-best-for">✅ Best For: Growing businesses that want to showcase multiple services and build stronger customer trust.</p>
+            <div class="offer-divider"></div>
+            <ul class="offer-advantages">
+              <li>🌟 Professional multi-page website for a stronger brand image.</li>
+              <li>📋 Showcase all your services in an organized manner.</li>
+              <li>🖼️ Display your work, products, or portfolio with a gallery section.</li>
+              <li>📞 Multiple enquiry options to generate more leads.</li>
+              <li>🎨 Enhanced user experience with a premium design layout.</li>
+            </ul>
+            <a href="#offer-form" class="btn btn-neon-outline">Claim This Offer</a>
+          </div>
+
+          Card 3 — Featured
+          <div class="offer-card featured reveal" style="--d:.2s">
+            <span class="offer-popular-badge">🔥 MOST POPULAR</span>
+            <p class="offer-card-name">E-Commerce Website</p>
+            <p class="offer-card-price grad-text">₹2,999</p>
+            <p class="offer-best-for">✅ Best For: Businesses that want to sell products online and accept customer orders easily.</p>
+            <div class="offer-divider"></div>
+            <ul class="offer-advantages">
+              <li>🛒 Start selling your products online with a complete e-commerce store.</li>
+              <li>📦 Showcase products professionally and manage customer enquiries.</li>
+              <li>💬 WhatsApp order integration for quick and easy communication.</li>
+              <li>📱 Fully responsive design for mobile, tablet, and desktop users.</li>
+              <li>🌐 <strong style="color:var(--fg)">1 Month FREE Hosting Included.</strong></li>
+              <li>🛠️ <strong style="color:var(--fg)">1 Year FREE Service &amp; Support Included.</strong></li>
+              <li>💎 Highest value package with hosting and long-term support benefits.</li>
+            </ul>
+            <a href="#offer-form" class="btn btn-neon">Claim This Offer <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+
+        </div>
+      </div>
+    </section> -->
+
+
+    <!-- ════════════════════════════════
+         SECTION 4 — IMPORTANT INFO
+    ════════════════════════════════ -->
+    <section class="info-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow grad-text">Please Read</span>
+          <h2>📌 Before You <span class="grad-text">Book</span></h2>
+          <p>Please read the following information carefully before submitting your request.</p>
+        </div>
+
+        <div class="info-card glass-card reveal">
+          <ul class="info-list">
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              An advance payment is required before the project begins.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              Website development will commence only after confirmation of the advance payment.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              Project timelines will be shared after reviewing your requirements.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              Hosting is included only in the ₹2,999 package for one month.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              One year of free support and maintenance is included only in the ₹2,999 package.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              Additional features requested beyond the selected package may involve additional charges.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              All communication and project updates will be provided professionally by the Webcore team.
+            </li>
+            <li>
+              <span class="info-check"><i class="fa-solid fa-check"></i></span>
+              By submitting this form, you agree to be contacted regarding your website requirements.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ════════════════════════════════
+         SECTION 5 — FINAL CTA
+    ════════════════════════════════ -->
+    <section class="final-cta">
+      <div class="glow-orbs" style="position:absolute; pointer-events:none;">
+        <div class="orb orb-purple" style="opacity:.25; bottom:-100px; left:30%;"></div>
+      </div>
+      <div class="container reveal">
+        <h2>Ready to grow your<br><span class="grad-text grad-anim">business online?</span></h2>
+        <p>Join hundreds of businesses moving towards a stronger digital presence.</p>
+        <a href="#offer-form" class="btn btn-neon btn-lg">Claim Your Offer Today <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </section>
+
+  </main>
+
+ <!-- FOOTER -->
+  <footer>
+    <div class="footer-line"></div>
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="logo">
+            <img src="Webcore.png" alt="Webcore Logo" class="logo-mark logo-md" />
+            <span class="logo-text">WEB<span class="grad-text"> CORE</span></span>
+          </div>
+        <p class="muted">Webcore builds premium, futuristic websites that turn visitors into customers. Web development &amp; business solutions, engineered to convert.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/share/1CTiRXBR2V/" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/web_core.in?igsh=dnJreGhweXFncTB4" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="webdevelop.html">Web Development</a></li>
+          <li><a href="offers.html">Current Offers</a></li>
+          <li><a href="#process">Our Works</a></li>
+          <li><a href="#clients">Clients</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="contact-list">
+          <li><i class="fa-solid fa-phone"></i><a href="tel:+918608865811">Click to call</a></li>
+          <li><i class="fa-solid fa-envelope"></i> <a href="mailto:webcore.com@gmail.com">webcore.com@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>© <span id="year"></span> Webcore. All rights reserved.</p>
+      <p>Crafted with <span class="grad-text" style="font-weight:700">passion</span> &amp; code.</p>
+    </div>
+  </footer>
+
+
+  <script>
+    // ── Dynamic package options based on website type ──
+    const packages = {
+      'Landing Page': [
+        { value: '₹1,999 – Landing Page',    price: '₹1,999', label: 'Landing Page Website' },
+        { value: '₹2,499 – Business Website', price: '₹2,499', label: 'Business Website' },
+        { value: '₹2,999 – E-Commerce Website', price: '₹2,999', label: 'E-Commerce Website',
+          extras: '✔ 1 Month Free Hosting &nbsp;·&nbsp; ✔ 1 Year Free Support &amp; Maintenance' }
+      ],
+      'E-Commerce Website': [
+        { value: '₹5,999 – Includes .in Domain',  price: '₹5,999', label: 'Includes .in Domain' },
+        { value: '₹7,999 – Includes .in Domain',  price: '₹7,999', label: 'Includes .in Domain' },
+        { value: '₹9,999 – Includes .com Domain', price: '₹9,999', label: 'Includes .com Domain' }
+      ]
+    };
+
+    const websiteTypeSelect = document.getElementById('websiteType');
+    const pkgRadioGroup     = document.getElementById('pkgRadioGroup');
+    const pkgHint           = document.getElementById('pkgHint');
+
+    function renderPackages(type) {
+      const list = packages[type];
+      if (!list) { pkgRadioGroup.innerHTML = ''; pkgHint.style.display = 'block'; return; }
+
+      pkgHint.style.display = 'none';
+      pkgRadioGroup.innerHTML = list.map((pkg, i) => `
+        <label class="pkg-radio-label">
+          <input type="radio" name="package" value="${pkg.value}" ${i === 0 ? 'required' : ''} />
+          <span class="pkg-radio-indicator"></span>
+          <div class="pkg-radio-info">
+            <span class="pkg-radio-price">${pkg.price}</span>
+            <span class="pkg-radio-extras">
+              ${pkg.label}
+              ${pkg.extras ? `&nbsp;·&nbsp; <span>${pkg.extras}</span>` : ''}
+            </span>
+          </div>
+          <span class="pkg-check-tick"><i class="fa-solid fa-check"></i></span>
+        </label>
+      `).join('');
+    }
+
+    websiteTypeSelect.addEventListener('change', () => renderPackages(websiteTypeSelect.value));
+
+    // ── Navbar scroll effect ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Mobile menu toggle ──
+    document.getElementById('navToggle').addEventListener('click', () => {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    });
+
+    // ── Smooth close mobile menu on link click ──
+    document.querySelectorAll('.mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+    });
+
+    // ── Reveal on scroll ──
+    document.body.classList.add('js-ready');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // ── Form submission (Formspree) ──
+    const offerForm = document.getElementById('offerForm');
+    const offerSuccess = document.getElementById('offerSuccess');
+
+    offerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(offerForm);
+      const action = offerForm.getAttribute('action');
+
+      // If Formspree endpoint not yet set, just show success for demo
+      if (action === 'YOUR_FORMSPREE_LINK_HERE') {
+        offerForm.style.display = 'none';
+        offerSuccess.classList.add('show');
+        return;
+      }
+
+      try {
+        const res = await fetch(action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          offerForm.style.display = 'none';
+          offerSuccess.classList.add('show');
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      } catch {
+        alert('Network error. Please try again.');
+      }
+    });
+  </script>
+
+</body>
+</html>
